@@ -40,19 +40,19 @@
 
     <context-param>
         <param-name>deviceMgtEndpoint</param-name>
-        <param-value>https://localhost:8243/api/device-mgt/v1.0</param-value>
+        <param-value>https://212.47.250.244:8243/api/device-mgt/v1.0</param-value>
     </context-param>
     <context-param>
         <param-name>apiRegistrationEndpoint</param-name>
-        <param-value>https://localhost:8243/api-application-registration/register</param-value>
+        <param-value>https://212.47.250.244:8243/api-application-registration/register</param-value>
     </context-param>
     <context-param>
         <param-name>tokenEndpoint</param-name>
-        <param-value>https://localhost:8243/token</param-value>
+        <param-value>https://212.47.250.244:8243/token</param-value>
     </context-param>
     <context-param>
         <param-name>websocketEndpoint</param-name>
-        <param-value>wss://localhost:9445</param-value>
+        <param-value>wss://212.47.250.244:9445</param-value>
     </context-param>
     <context-param>
         <param-name>agentScopesList</param-name>

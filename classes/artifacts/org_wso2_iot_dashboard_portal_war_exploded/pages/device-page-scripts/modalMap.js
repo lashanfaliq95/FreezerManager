@@ -1,5 +1,5 @@
 //initialising the input map
-var map = L.map('inputMapId').setView([4.85015, 101.82129], 6);
+var map = L.map('inputMapId').setView([7.65655, 80.77148], 7);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

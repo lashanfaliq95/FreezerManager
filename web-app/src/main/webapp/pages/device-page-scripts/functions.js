@@ -68,7 +68,7 @@ function getDevice(dev, index, lat, long) {
             getDevice(devicesTemp[newIndex], newIndex, devicesTemp[newIndex].properties[0].value, devicesTemp[newIndex].properties[1].value);
         }
 
-        //function to implement the regex search bar
+        // function to implement the regex search bar
         var $rows = $('#devices-listing tbody tr');
         $('#search').keyup(function () {
             var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
@@ -94,6 +94,26 @@ function getDevice(dev, index, lat, long) {
 
     });
 
+}
+
+function search() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("devices-listing-listview");
+    tr = table.getElementsByTagName("tr");
+    console.log(tr);
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        console.log(td);
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
 }
 
 function getDevices(offset, filterBounds) {
@@ -360,34 +380,7 @@ function addNewDevice() {
     });
 }
 
-function incountry() {
-    var countryName = $("#countryName").val();
-    var success = function (data) {
-        console.log(data);
-        // var northeast=L.latLng(data.results[0].geometry.bounds.northeast.lat,data.results[0].geometry.bounds.northeast.lng),
-        //     southwest=L.latLng(data.results[0].geometry.bounds.southwest.lat,data.results[0].geometry.bounds.southwest.lng),
-        //     bounds = L.latLngBounds(northeast, southwest);
-        // var i;
-        // for (i = 0; i < devices.length; i++) {
-        //     if(bounds.contains([devices[i].properties[1].value, devices[i].properties[2].value])){
-        //         devices.splice(i, 1);
-        //         console.log('ds');
-        //     }
-        // }
-        // for (i = 0; i < devicesTemp.length; i++) {
-        //     if(bounds.contains([devicesTemp[i].properties[1].value, devicesTemp[i].properties[2].value])){
-        //         devicesTemp.splice(i, 1);
-        //         console.log('ds');
-        //     }
-        // }
-    };
 
-    $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + countryName + "&sensor=false&key=AIzaSyBF9tC-z5NiLUlbzyLM0TQxlcrdxaNOLbs",
-        type: "POST",
-        success: success
-    });
-}
 
 function precise_round(num, decimals) {
     var t = Math.pow(10, decimals);

@@ -35,7 +35,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="images/sidebar-1.jpg">
+    <div class="sidebar" data-color="blue" data-image="images/sidebar-1.jpg" style="width: 270px">
         <div class="logo">
             <a href="./devices.jsp" class="simple-text">
                 <strong>Device</strong>Portal

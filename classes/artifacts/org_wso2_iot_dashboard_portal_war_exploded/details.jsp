@@ -265,7 +265,6 @@
 
     $(document).ready(function () {
         $(document).ready(function () {
-            console.log(<%=pageContext.getServletContext().getInitParameter("websocketEndpoint")%>);
             var wsStatsEndpoint = "<%=pageContext.getServletContext().getInitParameter("websocketEndpoint")%>/secured-websocket/iot.per.device.stream.carbon.super."+deviceType+"/1.0.0?"
                 + "deviceId=<%=id%>&deviceType="+deviceType+"&websocketToken=<%=request.getSession(false).getAttribute(LoginController.ATTR_ACCESS_TOKEN)%>";
             realtimeGraphRefresh(wsStatsEndpoint);
